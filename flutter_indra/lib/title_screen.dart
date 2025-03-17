@@ -67,167 +67,168 @@ class TitleScreen extends StatelessWidget {
               ),
             ),
 
-            Container(
-              margin: EdgeInsets.only(left: 50.0, right: 50.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 10,
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 1",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 2",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+              children: [
+                BoxDesign(label: "Box 1"),
+                BoxDesign(label: "Box 2"),
+                BoxDesign(label: "Box 3"),
+                BoxDesign(label: "Box 4"),
+                BoxDesign(label: "Box 5"),
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 3",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 1",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 4",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 2",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 5",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 3",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 6",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 4",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 7",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 5",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 222, 221, 221),
-                          ),
-                        ),
-                        Text(
-                          "Box 8",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 6",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 7",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+
+                // Column(
+                //   children: [
+                //     Container(
+                //       height: 50,
+                //       width: 50,
+                //       decoration: BoxDecoration(
+                //         color: const Color.fromARGB(255, 222, 221, 221),
+                //       ),
+                //     ),
+                //     Text(
+                //       "Box 8",
+                //       style: TextStyle(
+                //         fontSize: 11,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ],
             ),
 
             Container(
@@ -261,3 +262,28 @@ class TitleScreen extends StatelessWidget {
     );
   }
 }
+
+class BoxDesign extends StatelessWidget {
+  final String label;
+
+  const BoxDesign({required this.label, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 222, 221, 221),
+          ),
+        ),
+        Text(label),
+      ],
+    );
+  }
+}
+
+
+//custom widget concept
