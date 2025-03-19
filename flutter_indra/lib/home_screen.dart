@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +62,28 @@ class HomeScreen extends StatelessWidget {
                 bgcolors: Colors.grey,
                 description:
                     "Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development to fill empty spaces in a layout that does not ...",
+              ),
+
+              SizedBox(
+                height: 200,
+                child: Expanded(
+                  child: PageView.builder(
+                    itemBuilder: (context, index) {
+                      return Card(
+                        elevation: 5.0,
+                        color: const Color.fromARGB(255, 234, 232, 225),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("images/hello.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
             ],
           ),
