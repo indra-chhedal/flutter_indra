@@ -18,7 +18,7 @@ class _PageViewExampleAppState extends State<PageViewExampleApp> {
             Text(
               "Advertisement field",
               style: TextStyle(
-                color: const Color.fromARGB(255, 62, 240, 121),
+                color: const Color.fromARGB(255, 15, 15, 15),
                 fontSize: 25,
               ),
             ),
