@@ -131,12 +131,7 @@ class IndraChhedal extends StatelessWidget {
                         padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
                         height: 50,
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                          // border: Border.all(
-                          //   width: 1,
-                          //   color: const Color.fromARGB(255, 122, 120, 120),
-                          // ),
-                        ),
+                        decoration: BoxDecoration(),
                         child: Row(
                           children: [
                             Text(
@@ -312,6 +307,27 @@ class IndraChhedal extends StatelessWidget {
                 ],
               ),
             ),
+
+            //usefull link section
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Useful Links",
+                  style: TextStyle(color: Colors.black, fontSize: 14),
+                ),
+                Links(label: "EDV Online Form", demoIcon: Icons.event_rounded),
+                Links(
+                  label: "Voter Id form",
+                  demoIcon: Icons.how_to_vote_rounded,
+                ),
+                Links(
+                  label: "Licence Form",
+                  demoIcon: Icons.library_add_check_rounded,
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
           ],
         ),
       ),
@@ -425,6 +441,7 @@ class SocialIcons extends StatelessWidget {
   }
 }
 
+//services
 class Services extends StatelessWidget {
   final String label;
   final IconData demoIcon;
@@ -438,6 +455,45 @@ class Services extends StatelessWidget {
         padding: EdgeInsets.all(20),
 
         height: 80,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 251, 250, 250),
+          border: Border.symmetric(
+            horizontal: BorderSide(
+              width: 1,
+              color: const Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+        ),
+        child: Row(
+          spacing: 20,
+          children: [
+            Icon(demoIcon, color: Colors.blueAccent),
+            Text(label, style: TextStyle(color: Colors.blueAccent)),
+            SizedBox(width: 30),
+            Icon(Icons.keyboard_arrow_right, color: Colors.blueAccent),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//useful links
+class Links extends StatelessWidget {
+  final String label;
+  final IconData demoIcon;
+
+  const Links({required this.label, required this.demoIcon, super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      child: Container(
+        padding: EdgeInsets.all(20),
+
+        height: 70,
         width: double.infinity,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 251, 250, 250),
