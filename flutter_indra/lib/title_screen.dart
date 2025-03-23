@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_indra/home_screen.dart';
 
 class TitleScreen extends StatelessWidget {
   const TitleScreen({super.key});
@@ -256,6 +257,13 @@ class TitleScreen extends StatelessWidget {
                 ),
               ),
             ),
+
+            ElevatedButton(
+              onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+              return HomeScreen();
+            },));},
+             child: Text("Click me")),
           ],
         ),
       ),

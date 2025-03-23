@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ImageScreen extends StatelessWidget {
   const ImageScreen({super.key});
@@ -35,6 +36,12 @@ class ImageScreen extends StatelessWidget {
                 width: 100,
                 fit: BoxFit.cover,
               ),
+            ),
+
+            SvgPicture.asset(
+              'images/payment.svg',
+              height: 300,
+              width: double.infinity,
             ),
           ],
         ),

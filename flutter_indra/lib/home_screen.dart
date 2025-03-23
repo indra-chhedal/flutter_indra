@@ -66,27 +66,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(
                 height: 200,
-                child: Expanded(
-                  child: PageView.builder(
-                    itemBuilder: (context, index) {
-                      return Card(
-                        elevation: 5.0,
-                        color: const Color.fromARGB(255, 234, 232, 225),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("images/hello.jpg"),
-                              fit: BoxFit.cover,
-                            ),
+                child: PageView.builder(
+                  itemBuilder: (context, index) {
+                    return Card(
+                      elevation: 5.0,
+                      color: const Color.fromARGB(255, 234, 232, 225),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("images/hello.jpg"),
+                            fit: BoxFit.cover,
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ],
           ),
+          
+
         ),
       ),
     );

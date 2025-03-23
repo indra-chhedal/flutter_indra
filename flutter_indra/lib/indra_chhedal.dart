@@ -341,8 +341,10 @@ class IndraChhedal extends StatelessWidget {
             icon: Icon(Icons.messenger_sharp),
             label: 'messange',
           ),
+          
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
+            
             label: 'Profile',
           ),
         ],
@@ -518,3 +520,6 @@ class Links extends StatelessWidget {
     );
   }
 }
+
+//clip r rect
+//divider
