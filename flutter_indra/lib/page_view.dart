@@ -28,11 +28,14 @@ class _PageViewExampleAppState extends State<PageViewExampleApp> {
                   return Card(
                     elevation: 5.0,
                     color: const Color.fromARGB(255, 234, 232, 225),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("images/hello.jpg"),
-                          fit: BoxFit.cover,
+                    child: ClipRRect(//ClipRRect is used to make border radius in picture container.
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("images/hello.jpg"),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),

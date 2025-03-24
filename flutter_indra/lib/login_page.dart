@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column(
               children: [
                 Container(
@@ -34,6 +34,10 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 10),
                 const TextField(
                   decoration: InputDecoration(
+                    icon: Icon(
+                      Icons.supervised_user_circle,
+                      color: Colors.amberAccent,
+                    ),
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(),
@@ -47,7 +51,12 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
+                    icon: Icon(
+                      Icons.lock,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(),
@@ -55,19 +64,21 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 25),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Colors.white,
-                  ),
-                  height: 45,
-                  width: 90,
-                  child: Center(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 45, 87, 122),
+                ButtonTheme(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: const Color.fromARGB(255, 244, 147, 147),
+                    ),
+                    height: 45,
+                    width: 120,
+                    child: Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Color.fromARGB(255, 45, 87, 122),
+                        ),
                       ),
                     ),
                   ),

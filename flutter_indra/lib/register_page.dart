@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_indra/home_screen.dart';
 import 'package:flutter_indra/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -68,19 +69,29 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Colors.white,
-                  ),
-                  height: 45,
-                  width: double.infinity,
-                  child: Center(
-                    child: Text(
-                      "Register",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 45, 87, 122),
+                ButtonTheme(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: const Color.fromARGB(255, 221, 110, 179),
+                      ),
+                      height: 45,
+                      width: double.infinity,
+                      child: Center(
+                        child: Text(
+                          "Register",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 45, 87, 122),
+                          ),
+                        ),
                       ),
                     ),
                   ),

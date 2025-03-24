@@ -31,21 +31,26 @@ class IndraChhedal extends StatelessWidget {
                 ),
 
                 Card(
-                  elevation: 2.0,
+                  elevation: 3.0,
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
+
                     children: [
                       DrawDemo(
                         demoIcon: Icons.video_library_sharp,
                         label: "Video Content",
                       ),
+                      Divider(),
                       DrawDemo(
                         demoIcon: Icons.facebook_sharp,
                         label: "Facebook",
                       ),
+                      Divider(),
                       DrawDemo(
                         demoIcon: Icons.calendar_month_sharp,
                         label: "Calendar",
                       ),
+                      Divider(),
                       DrawDemo(
                         demoIcon: Icons.newspaper_sharp,
                         label: "News Paper",
@@ -85,12 +90,7 @@ class IndraChhedal extends StatelessWidget {
                         padding: EdgeInsets.only(left: 30, top: 10, bottom: 10),
                         height: 50,
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                          // border: Border.all(
-                          //   width: 1,
-                          //   color: const Color.fromARGB(255, 122, 120, 120),
-                          // ),
-                        ),
+                        decoration: BoxDecoration(),
                         child: Text(
                           "Change Language",
                           style: TextStyle(
@@ -341,10 +341,10 @@ class IndraChhedal extends StatelessWidget {
             icon: Icon(Icons.messenger_sharp),
             label: 'messange',
           ),
-          
+
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            
+
             label: 'Profile',
           ),
         ],
@@ -365,16 +365,8 @@ class DrawDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(20),
-      height: 80,
       width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.symmetric(
-          horizontal: BorderSide(
-            width: 1,
-            color: const Color.fromARGB(255, 230, 227, 227),
-          ),
-        ),
-      ),
+      decoration: BoxDecoration(),
       child: Row(
         spacing: 20,
         children: [
@@ -388,7 +380,7 @@ class DrawDemo extends StatelessWidget {
   }
 }
 
-// this is for pageview options
+// news feed section
 class PageViewExample extends StatelessWidget {
   final String photo;
   final String heading;
@@ -401,29 +393,33 @@ class PageViewExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 300,
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 1,
-          color: const Color.fromARGB(255, 247, 245, 245),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        height: 200,
+        width: 300,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 1,
+            color: const Color.fromARGB(255, 247, 245, 245),
+          ),
+          borderRadius: BorderRadius.circular(10),
+          color: const Color.fromARGB(255, 234, 234, 232),
         ),
-        borderRadius: BorderRadius.circular(10),
-        color: const Color.fromARGB(255, 234, 234, 232),
-      ),
 
-      child: Column(
-        children: [
-          Image.asset(photo, height: 150, width: 300, fit: BoxFit.cover),
-          SizedBox(height: 5),
-          Text(heading),
-        ],
+        child: Column(
+          children: [
+            Image.asset(photo, height: 150, width: 300, fit: BoxFit.cover),
+            SizedBox(height: 5),
+            Text(heading),
+          ],
+        ),
       ),
     );
   }
 }
 
+//social icons
 class SocialIcons extends StatelessWidget {
   final IconData icons;
   final Color color;
