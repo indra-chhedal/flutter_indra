@@ -65,7 +65,7 @@ class RegisterPage extends StatelessWidget {
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(),
-                    hintText: "Enter your Conform Password",
+                    hintText: "Conform Password",
                   ),
                 ),
                 const SizedBox(height: 20),
