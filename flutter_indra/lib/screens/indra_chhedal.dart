@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_indra/page_view.dart';
+import 'package:flutter_indra/extra_screens/home_screen.dart';
+import 'package:flutter_indra/screens/login_design.dart';
+import 'package:flutter_indra/screens/notification_screen.dart';
+import 'package:flutter_indra/screens/page_view.dart';
+import 'package:flutter_indra/screens/todo_app.dart';
 
-class IndraChhedal extends StatelessWidget {
+class IndraChhedal extends StatefulWidget {
   const IndraChhedal({super.key});
+
+  @override
+  State<IndraChhedal> createState() => _IndraChhedalState();
+}
+
+class _IndraChhedalState extends State<IndraChhedal> {
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -209,142 +220,167 @@ class IndraChhedal extends StatelessWidget {
             padding: EdgeInsets.only(right: 20),
             color: const Color.fromARGB(255, 255, 64, 43),
             icon: const Icon(Icons.notification_add_sharp),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationScreen()),
+              );
+            },
           ),
         ],
       ),
 
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+      body:
+          //using ternary operator for showing both home and message showing.
+          currentIndex == 1
+              ? TodoApp()
+              : SingleChildScrollView(
+                scrollDirection: Axis.vertical,
 
-        child: Column(
-          children: [
-            SizedBox(height: 10),
-            Container(
-              padding: EdgeInsets.all(20),
-              width: double.infinity,
-              color: const Color.fromARGB(255, 243, 231, 186),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Introduction",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 11, 11, 232),
-                      fontSize: 24,
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      width: double.infinity,
+                      color: const Color.fromARGB(255, 243, 231, 186),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Introduction",
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 11, 11, 232),
+                              fontSize: 24,
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            "Hello there, this is me indra chhedal. i am studying bca at kathmandu Bernhardt college, Bafal, Kathmandu. i am passinate on flutter app developer.",
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    "Hello there, this is me indra chhedal. i am studying bca at kathmandu Bernhardt college, Bafal, Kathmandu. i am passinate on flutter app developer.",
-                  ),
-                ],
-              ),
-            ),
-            //news feed section
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text(
-                    "News Feed",
-                    style: TextStyle(color: Colors.blue, fontSize: 25),
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      spacing: 5,
+                    //news feed section
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Text(
+                            "News Feed",
+                            style: TextStyle(color: Colors.blue, fontSize: 25),
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              spacing: 5,
+                              children: [
+                                PageViewExample(
+                                  heading:
+                                      "hello first image in my news feed section",
+                                  photo: "images/pic.jpg",
+                                ),
+                                PageViewExample(
+                                  heading:
+                                      "hello first image in my news feed section",
+                                  photo: "images/download.jpg",
+                                ),
+                                PageViewExample(
+                                  heading:
+                                      "hello first image in my news feed section",
+                                  photo: "images/hello.jpg",
+                                ),
+                                PageViewExample(
+                                  heading:
+                                      "hello first image in my news feed section",
+                                  photo: "images/nepal.jpg",
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //advertisement section
+                    SizedBox(height: 300, child: PageViewExampleApp()),
+
+                    //service section
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 6),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Services",
+                            style: TextStyle(color: Colors.black, fontSize: 12),
+                          ),
+                          SizedBox(height: 10),
+                          Services(
+                            label: "Nepali Calendar",
+                            demoIcon: Icons.calendar_month_sharp,
+                          ),
+                          Services(
+                            label: "Nepali Date Converter",
+                            demoIcon: Icons.calendar_today,
+                          ),
+                          Services(
+                            label: "Visa Check Links",
+                            demoIcon: Icons.book_online,
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //usefull link section
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        PageViewExample(
-                          heading: "hello first image in my news feed section",
-                          photo: "images/pic.jpg",
+                        Text(
+                          "Useful Links",
+                          style: TextStyle(color: Colors.black, fontSize: 14),
                         ),
-                        PageViewExample(
-                          heading: "hello first image in my news feed section",
-                          photo: "images/download.jpg",
+                        Links(
+                          label: "EDV Online Form",
+                          demoIcon: Icons.event_rounded,
                         ),
-                        PageViewExample(
-                          heading: "hello first image in my news feed section",
-                          photo: "images/hello.jpg",
+                        Links(
+                          label: "Voter Id form",
+                          demoIcon: Icons.how_to_vote_rounded,
                         ),
-                        PageViewExample(
-                          heading: "hello first image in my news feed section",
-                          photo: "images/nepal.jpg",
+                        Links(
+                          label: "Licence Form",
+                          demoIcon: Icons.library_add_check_rounded,
                         ),
                       ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: 20),
+                  ],
+                ),
               ),
-            ),
-            //advertisement section
-            SizedBox(height: 300, child: PageViewExampleApp()),
 
-            //service section
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 6),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "Services",
-                    style: TextStyle(color: Colors.black, fontSize: 12),
-                  ),
-                  SizedBox(height: 10),
-                  Services(
-                    label: "Nepali Calendar",
-                    demoIcon: Icons.calendar_month_sharp,
-                  ),
-                  Services(
-                    label: "Nepali Date Converter",
-                    demoIcon: Icons.calendar_today,
-                  ),
-                  Services(
-                    label: "Visa Check Links",
-                    demoIcon: Icons.book_online,
-                  ),
-                ],
-              ),
-            ),
-
-            //usefull link section
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Useful Links",
-                  style: TextStyle(color: Colors.black, fontSize: 14),
-                ),
-                Links(label: "EDV Online Form", demoIcon: Icons.event_rounded),
-                Links(
-                  label: "Voter Id form",
-                  demoIcon: Icons.how_to_vote_rounded,
-                ),
-                Links(
-                  label: "Licence Form",
-                  demoIcon: Icons.library_add_check_rounded,
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-          ],
-        ),
-      ),
-
+      //bottom navigation bar
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        currentIndex: currentIndex,
+        onTap: (value) {
+          if (value == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Loginpages()),
+            );
+          } else {
+            setState(() {
+              currentIndex = value;
+            });
+          }
+        },
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          // BottomNavigationBarItem(icon: Icon(Icons.business),label: 'Business',),
-          // BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.messenger_sharp),
-            label: 'messange',
-          ),
+
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'messange'),
 
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-
             label: 'Profile',
           ),
         ],

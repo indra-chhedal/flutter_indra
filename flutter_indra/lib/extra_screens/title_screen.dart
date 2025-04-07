@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_indra/home_screen.dart';
+import 'package:flutter_indra/extra_screens/home_screen.dart';
 
 class TitleScreen extends StatelessWidget {
   const TitleScreen({super.key});
