@@ -55,7 +55,13 @@ class _TodoAppState extends State<TodoApp> {
                               subtitle: Text(todo.description),
                               trailing: Checkbox(
                                 value: todo.isCompleted,
-                                onChanged: (value) {},
+                                onChanged: (value) {
+                                  setState(() {
+                                    todos[index] = todo.copyWith(
+                                      isCompleted: !todo.isCompleted,
+                                    );
+                                  });
+                                },
                               ),
                             ),
                           );
